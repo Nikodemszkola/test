@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolnicy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="strona1">
+    <h1>Rolnicy</h1>
+    <div class="tlo"></div>
+    <div class="div1">
+        <h2 class="dodawanie">Dodaj nowego rolnika</h2>
+        <form method="POST" action="strona1_iframe.php" target="rolnicyTable">
+            <input type="hidden" name="action" value="add">
+            <div class="label">
+                <label for="imie">Imię:</label>
+                <input type="text" id="imie" name="imie" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="nazwisko">Nazwisko:</label>
+                <input type="text" id="nazwisko" name="nazwisko" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="pesel">Pesel:</label>
+   
+                <input type="text" id="pesel" name="pesel" required onchange="validatePesel()">
+            </div>
+            <br>
+            <input class="przycisk1" type="submit" value="Dodaj" onclick="przycisk1()">
+        </form>
+    </div>
+    
+    <div class="div2">
+        <h2 class="odejmowanie">Usuń rolnika</h2>
+        <form method="POST" action="strona1_iframe.php" target="rolnicyTable">
+            <input type="hidden" name="action" value="delete">
+            <div class="label_2">
+                <label for="idrolnika">Id Rolnika:</label>
+                <input type="text" id="idrolnika" name="idrolnika" required>
+            </div>
+            <br>
+            <input type="submit" class="przycisk2" value="Usuń">
+        </form>
+    </div>
+
+    <div class="div3">
+        <h2 class="zmiana">Zmień imię rolnika</h2>
+        <form method="POST" action="strona1_iframe.php" target="rolnicyTable">
+            <input type="hidden" name="action" value="update">
+            <div class="label_3">
+                <label for="idrolnika_update">Id Rolnika:</label>
+                <input type="text" id="idrolnika_update" name="idrolnika_update" required>
+            </div>
+            <br>
+            <div class="label_3">
+                <label for="new_imie">Nowe imię:</label>
+                <input type="text" id="new_imie" name="new_imie" >
+            </div>
+            <br>
+           
+            <div class="label_3">
+                <label for="new_imie">Nowe Nazwisko:</label>
+                <input type="text" id="new_nazwisko" name="new_nazwisko" >
+            </div>
+            <br>
+            <input type="submit" class="przycisk3" value="Zmień">
+        </form>
+    </div>
+
+    <iframe src="strona1_iframe.php" name="rolnicyTable" frameborder="0"></iframe>
+    <button class="przycisk"><a href="index.html">Powrót</a></button>
+</body>
+<script>
+    function przycisk1() {
+        alert("Dodano rolnika");
+    }
+
+    function validatePesel() {
+        var peselInput = document.getElementById("pesel");
+        if (peselInput.value.length != 11) {
+            alert("PESEL musi mieć 11 cyfr");
+        }
+    }
+</script>
+</html>

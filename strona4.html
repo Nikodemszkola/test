@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zagrody</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .strona4{
+            background-color:lightgray;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            animation-name: animacja2;
+            animation-duration: 3s;
+            font-size: 50px;
+            
+        }
+        .div_kolejny{
+            width: 900px;
+            background-color:darkslateblue;
+            height: 900px;
+            position: absolute;
+            z-index: -1;
+            left: 504px;
+            top: 10px;
+            border-radius: 10%;
+        }
+        .div1{
+            border-style: solid;
+             position: absolute;
+             left: 793px;
+             top: 450px;
+            width:270px;
+            border-radius: 30px;
+            padding:20px;
+            text-align: center;
+            background-color:chartreuse;
+            font-weight: bold;
+            border-width: 0px;
+            
+            }
+            .dodawanie{
+                border-style: solid;
+                border-radius: 12px;
+                background-color: forestgreen;
+                border-color: forestgreen;
+                margin-right: 1px;
+                color: crimson;
+            }
+            .div2{
+                border-style: solid;
+             position: absolute;
+             left: 980px;
+             top: 645px;
+            width:300px;
+            border-radius: 30px;
+            padding:20px;
+            text-align: center;
+            background-color:brown;
+            font-weight: bold;
+            border-width: 0px;
+            }
+            .div3{
+                border-style: solid;
+             position: absolute;
+             left: 595px;
+             top: 630px;
+            width:300px;
+            border-radius: 30px;
+            padding:20px;
+            text-align: center;
+            background-color:brown;
+            font-weight: bold;
+            border-width: 0px;
+               
+            }
+            .przycisk5{
+                position: absolute;
+                top: 400px;
+                right: 905px; 
+                border-radius: 10px;
+                border-width: 0px;
+                background-color:chartreuse;
+            }
+    </style>
+</head>
+
+<body class="strona4">
+    <h1>Zagrody</h1>
+    <div class="div_kolejny"></div>
+    <div class="div1">
+        <h2 class="dodawanie">Dodaj nową zagrodę</h2>
+        <form method="POST" action="strona4_iframe.php" target="zagrodyTable">
+            <input type="hidden" name="action" value="add">
+            <br>
+            <input class="przycisk1" type="submit" value="Dodaj">
+        </form>
+    </div>
+    
+
+    <div class="div2">
+        <h2 class="odejmowanie">Usuń zagrodę</h2>
+        <form method="POST" action="strona4_iframe.php" target="zagrodyTable">
+            <input type="hidden" name="action" value="delete">
+            <div class="label_2">
+                <label for="idzagrody">Id zagrody:</label>
+                <input type="text" id="idzagrody" name="idzagrody" required>
+            </div>
+            <br>
+            <input type="submit" class="przycisk2" value="Usuń">
+        </form>
+    </div>
+
+    <div class="div3">
+        <h2 class="zmiana">Zmień rolnika dla danej zagrody</h2>
+        <form method="POST" action="strona4_iframe.php" target="zagrodyTable">
+            <input type="hidden" name="action" value="update">
+            <div class="label_3">
+                <label for="idzagrody_update">Id zagrody:</label>
+                <input type="text" id="idzagrody_update" name="idzagrody_update" required>
+            </div>
+            <br>
+            <div class="label_3">
+                <label for="new_rolnik">Nowy rolnik:</label>
+                <input type="text" id="new_rolnik" name="new_rolnik" required>
+            </div>
+            <br>
+            <input type="submit" class="przycisk3" value="Zmień">
+        </form>
+    </div>
+
+    <iframe src="strona4_iframe.php" name="zagrodyTable" frameborder="0"></iframe>
+    <button class="przycisk5"><a href="index.html">Powrót</a></button>
+</body>
+
+</html>

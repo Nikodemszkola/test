@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pola</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="strona5">
+    <h1>Pola</h1>
+    <div class="div_kolejny"></div>
+    <div class="div6">
+        <h2 class="dodawanie">Dodaj nowe Pole</h2>
+        <form method="POST" action="strona5_iframe.php" target="polaTable">
+            <input type="hidden" name="action" value="add">
+            <div class="label">
+                <label for="rozmiar">Rozmiar:</label>
+                <input type="text" id="rozmiar" name="rozmiar" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="gleba">Rodzaj gleby:</label>
+                <input type="text" id="gleba" name="gleba" required>
+            </div>
+            <br>
+            <input class="przycisk1" type="submit" value="Dodaj">
+        </form>
+    </div>
+    <div class="div7">
+        <h2 class="odejmowanie">Usuń Pole
+        </h2>
+        <form action="strona5_iframe.php" method="post" target="polaTable">
+            <input type="hidden" name="action" value="delete">
+            <div class="label_2"><label for="idpola">Idpola</label>
+                <input type="text" id="idpola" name="idpola" required></div>
+            
+            <br>
+            <input type="submit" class="przycisk2" value="Usuń">
+
+
+        </form>
+    </div>
+    <iframe src="strona5_iframe.php" name="polaTable" frameborder="0"></iframe>
+    <button class="przycisk6"><a href="index.html">Powrót</a></button>
+</body>
+</html>

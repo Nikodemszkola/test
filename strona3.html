@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwierzęta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="strona3">
+    <h1>Zwierzęta</h1>
+    <div class="div1">
+        <h2 class="dodawanie">Dodaj nowe zwierzę</h2>
+        <form method="POST" action="strona3_iframe.php" target="zwierzetaTable">
+            <input type="hidden" name="action" value="add">
+            <div class="label">
+                <label for="idzagrody">Id zagrody:</label>
+                <input type="text" id="idzagrody" name="IdZagrody" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="gatunek">Gatunek:</label>
+                <input type="text" id="gatunek" name="gatunek" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="rasa">Rasa:</label>
+                <input type="text" id="rasa" name="rasa" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="waga">Waga:</label>
+                <input type="text" id="waga" name="waga" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="plec">Płeć:</label>
+                <input type="text" id="plec" name="plec" required>
+            </div>
+            <br>
+            <input class="przycisk1" type="submit" value="Dodaj">
+        </form>
+    </div>
+    
+    <div class="div2">
+        <h2 class="odejmowanie">Usuń zwierzę</h2>
+        <form method="POST" action="strona3_iframe.php" target="zwierzetaTable">
+            <input type="hidden" name="action" value="delete">
+            <div class="label_2">
+                <label for="idzwierzecia">Id zwierzęcia:</label>
+                <input type="text" id="idzwierzecia" name="idzwierzecia" required>
+            </div>
+            <br>
+            <input type="submit" class="przycisk2" value="Usuń">
+        </form>
+    </div>
+
+    <div class="div4">
+        <h2 class="zmiana">Zmień zagrodę dla danego zwierzęcia</h2>
+        <form method="POST" action="strona3_iframe.php" target="zwierzetaTable">
+            <input type="hidden" name="action" value="update">
+            <div class="label_3">
+                <label for="idzwierzecia_update">Id zwierzęcia:</label>
+                <input type="text" id="idzwierzecia_update" name="idzwierzecia_update" required>
+            </div>
+            <br>
+            <div class="label_3">
+                <label for="new_zagroda">Nowa zagroda:</label>
+                <input type="text" id="new_zagroda" name="new_zagroda">
+            </div>
+            <br>
+            <input type="submit" class="przycisk3" value="Zmień">
+        </form>
+    </div>
+
+    <iframe src="strona3_iframe.php" name="zwierzetaTable" frameborder="0"></iframe>
+    <button class="przycisk4"><a href="index.html">Powrót</a></button>
+</body>
+</html>

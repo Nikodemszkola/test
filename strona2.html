@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maszyny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="strona2">
+    <h1>Maszyny</h1>
+    <div class="tlo2"></div>
+    <div class="div1">
+        <h2 class="dodawanie">Dodaj nową maszynę</h2>
+        <form method="POST" action="strona2_iframe.php" target="maszynyTable">
+            <input type="hidden" name="action" value="add">
+            <div class="label">
+                <label for="typ">Typ:</label>
+                <input type="text" id="typ" name="typ" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="przeznaczenie">Przeznaczenie:</label>
+                <input type="text" id="przeznaczenie" name="przeznaczenie" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="czy_dostepna">Czy dostępna:</label>
+                <select id="czy_dostepna" name="czy_dostepna" required>
+                    <option value="1">Tak</option>
+                    <option value="0">Nie</option>
+                </select>
+            </div>
+            <br>
+            <input class="przycisk1" type="submit" value="Dodaj">
+        </form>
+    </div>
+    
+    <div class="div2">
+        <h2 class="odejmowanie">Usuń maszynę</h2>
+        <form method="POST" action="strona2_iframe.php" target="maszynyTable">
+            <input type="hidden" name="action" value="delete">
+            <div class="label_2">
+                <label for="idmaszyny">Id Maszyny:</label>
+                <input type="text" id="idmaszyny" name="idmaszyny" required>
+            </div>
+            <br>
+            <input type="submit" class="przycisk2" value="Usuń">
+        </form>
+    </div>
+
+    <div class="div4">
+        <h2 class="zmiana">Zmień przeznaczenie i dostępność maszyny</h2>
+        <form method="POST" action="strona2_iframe.php" target="maszynyTable">
+            <input type="hidden" name="action" value="update">
+            <div class="label_3">
+                <label for="idmaszyny_update">Id Maszyny:</label>
+                <input type="text" id="idmaszyny_update" name="idmaszyny_update" required>
+            </div>
+            <br>
+            <div class="label_3">
+                <label for="new_przeznaczenie">Nowe przeznaczenie:</label>
+                <input type="text" id="new_przeznaczenie" name="new_przeznaczenie">
+            </div>
+            <br>
+            <div class="label_3">
+                <label for="new_czy_dostepna">Nowa dostępność:</label>
+                <select id="new_czy_dostepna" name="new_czy_dostepna">
+                    <option value="1">Tak</option>
+                    <option value="0">Nie</option>
+                </select>
+            </div>
+            <br>
+            <input type="submit" class="przycisk3" value="Zmień">
+        </form>
+    </div>
+
+    <iframe src="strona2_iframe.php" name="maszynyTable" frameborder="0"></iframe>
+    <button class="przycisk4"><a href="index.html">Powrót</a></button>
+</body>
+</html>

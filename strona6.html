@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szczegoly-upraw</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .div1 {
+            border-style: solid;
+            position: absolute;
+            left: 740px;
+            top: 600px;
+            width: 400px;
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+            background-color: #C1E899;
+            font-weight: bold;
+            border-width: 0px;
+        }
+        .przycisk6 {
+            position: absolute;
+            top: 610px;
+            right: 895px; 
+            border-radius: 10px;
+            border-width: 0px;
+            background-color: cornsilk;
+        }
+        .label {
+            background-color: #55883B;
+            padding: 1px;
+            color: #9A6735;
+            border-radius: 20px;
+            width: 80%;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body class="strona6">
+    <h1>Szczegóły upraw</h1>
+    <div class="div_nastepny"></div>
+    <div class="div1">
+        <h2 class="dodawanie">Dodaj nową czynność</h2>
+        <form method="POST" action="strona6_iframe.php" target="szczegolyUprawTable">
+            <input type="hidden" name="action" value="add">
+            <div class="label">
+                <label for="Idrolnika">Idrolnika:</label>
+                <input type="text" id="Idrolnika" name="Idrolnika" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="Idmaszyny">Idmaszyny:</label>
+                <input type="text" id="Idmaszyny" name="Idmaszyny" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="Czynnosc">Czynność:</label>
+                <input type="text" id="Czynnosc" name="Czynnosc" required>
+            </div>
+            <br>
+            <div class="label">
+                <label for="Data">Data:</label>
+                <input type="date" id="Data" name="Data" required>
+            </div>
+            <br>
+            <input class="przycisk1" type="submit" value="Dodaj">
+        </form>
+    </div>
+    <iframe src="strona6_iframe.php" name="szczegolyUprawTable" frameborder="0"></iframe>
+    <button class="przycisk6"><a href="index.html">Powrót</a></button>
+</body>
+</html>
